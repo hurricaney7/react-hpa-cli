@@ -5,7 +5,7 @@ const program = require('commander');
 const inquirer = require('inquirer');
 const generator = require('../lib/generator');
 const build = require('../lib/build');
-const exec = require('child_process').exec;
+const childProcess = require('child_process');
 
 program
     .version('1.0.0')
@@ -16,12 +16,6 @@ program
     .command('serve')
     .action(() => {
         build.buildPages(true).then(value => {
-            // execSync(`node server.js`, {
-            //     stdio: 'inherit'
-            // });
-            exec('node server.js', {
-                stdio: 'inherit'
-            });
         });
     });
 /**
@@ -71,7 +65,7 @@ program
         inquirer.prompt(questions).then(answers => {
             generator.generateProject(project_name, answers.version, answers.author).then((isSuccess) => {
                 if (isSuccess) {
-                    execSync('npm install', { stdio: 'inherit' });
+                    childProcess.execSync('npm install', { stdio: 'inherit' });
                     // Build dlls
                     build.buidDllFiles()
                         .then(value => {
