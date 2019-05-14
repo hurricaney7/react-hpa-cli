@@ -1,0 +1,37 @@
+{
+  "name": "react-hpa",
+  "version": "1.0.0",
+  "description": "A command line interface for hybrid page application",
+  "preferGlobal": true,
+  "bin": {
+    "hpa": "./bin/command.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oliver Wan",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-proposal-class-properties": "^7.4.0",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "chalk": "^2.4.2",
+    "commander": "^2.18.0",
+    "console.table": "^0.10.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "filesize": "^4.1.2",
+    "fs-extra": "^7.0.1",
+    "inquirer": "^6.2.2",
+    "mini-css-extract-plugin": "^0.6.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.29.5"
+  }
+}
