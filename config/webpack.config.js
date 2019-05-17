@@ -95,7 +95,14 @@ module.exports = function (webpackEnv, isWatching) {
                             options: {
                                 modules: true,
                                 // Hash the class name with an unique hash code
-                                localIdentName: isDevMode ? '[name]_[hash:base64:5]' : '[hash:base64:10]',
+                                localIdentName: isDevMode ? '[name]_[hash:base64:5]' : '[hash:base64:10]'
+                            }
+                        },
+                        {
+                            loader: require.resolve('sass-loader'),
+                            options: {
+                                modules: true,
+                                localIdentName: isDevMode ? '[name]_[hash:base64:5]' : '[hash:base64:10]'
                             }
                         }
                     ],
