@@ -15,30 +15,26 @@ program
 program
     .command('serve')
     .action(() => {
-        build.buildPages(true).then(value => {
-        });
+        build.buildPages(true);
     });
 /**
  * Command to build dll files
+ * packet dll files
  */
 program
-    .command('build dll')
+    .command('pkt')
     .description('Build all dll files')
     .action(() => {
-        build.buidDllFiles().then(value => {
-        });
+        build.buidDllFiles();
     });
 /**
  * Command to build all pages
  */
 program
-    .command('build page')
+    .command('build')
     .description('Build all page related .js and .s/css files')
     .action(() => {
-        build.buildPages(false).then(value => {
-            if (value) return;
-            console.log(value);
-        });
+        build.buildPages(false);
     });
 
 
@@ -90,6 +86,14 @@ program.command('gp <page_name>')
     .description('Create a new page')
     .action(page_name => {
         generator.generatePage(page_name);
+    });
+/**
+ * Command to create a new dll pacakge
+ */
+program.command('gd <dll_name>')
+    .description('Create a new dll package')
+    .action(dll_name => {
+        generator.generateDll(dll_name);
     });
 
 
