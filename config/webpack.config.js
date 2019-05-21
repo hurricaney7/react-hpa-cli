@@ -127,23 +127,23 @@ module.exports = function (webpackEnv, isWatching) {
                 // Minify .js files
                 new TerserPlugin()
             ],
-            splitChunks: {
-                chunks: 'async',
-                minSize: 10000,
-                minChunks: 1,
-                maxAsyncRequests: 5,
-                maxInitialRequests: 3,
-                name: true,
-                cacheGroups: {
-                    default: false,
-                    commons: {
-                        test: /[\\/]node_modules[\\/]/,
-                        // output path
-                        name: "libs/main",
-                        chunks: "all"
-                    }
-                }
-            },
+            // splitChunks: {
+            //     chunks: 'async',
+            //     minSize: 10000,
+            //     minChunks: 1,
+            //     maxAsyncRequests: 5,
+            //     maxInitialRequests: 3,
+            //     name: true,
+            //     cacheGroups: {
+            //         default: false,
+            //         commons: {
+            //             test: /[\\/]node_modules[\\/]/,
+            //             // output path
+            //             name: "libs/main",
+            //             chunks: "all"
+            //         }
+            //     }
+            // },
             minimize: true,
         },
         stats: 'minimal'

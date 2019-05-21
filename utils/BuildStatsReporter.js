@@ -16,7 +16,7 @@ exports.reportBuildStats = (stats) => {
     const table = [];
 
     chunks.forEach((chunk) => {
-        const buildTimestamp = chunk.entryModule.buildTimestamp;
+        const buildTimestamp = chunk.entryModule ? chunk.entryModule.buildTimestamp : 0;
         const fileStats = fs.statSync(path.join(process.cwd(), 'dist', chunk.name + '.js'));
         const buildTime = new Date(new Date(buildTimestamp) - new Date(startTime));
         table.push({

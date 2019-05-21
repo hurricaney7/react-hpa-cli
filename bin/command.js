@@ -15,7 +15,7 @@ program
 program
     .command('serve')
     .action(() => {
-        build.buildPages(true);
+        build.buildPages(true, 'development');
     });
 /**
  * Command to build dll files
@@ -34,7 +34,7 @@ program
     .command('build')
     .description('Build all page related .js and .s/css files')
     .action(() => {
-        build.buildPages(false);
+        build.buildPages(false, 'production');
     });
 
 
@@ -66,7 +66,7 @@ program
                     build.buidDllFiles()
                         .then(value => {
                             if (value) {
-                                build.buildPages(false).then(value => {
+                                build.buildPages(false, 'development').then(value => {
                                     if (!value) {
                                         console.log(chalk.red('Error during building page files'));
                                     }
