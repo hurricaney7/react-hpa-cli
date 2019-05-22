@@ -1,6 +1,6 @@
 {
   "name": "react-hpa-cli",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A command line interface for hybrid page application",
   "preferGlobal": true,
   "bin": {
