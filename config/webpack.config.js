@@ -69,7 +69,12 @@ module.exports = function (webpackEnv, isWatching) {
                             require.resolve('@babel/preset-env'),
                             require.resolve('@babel/preset-react')
                         ],
-                        plugins: [require.resolve('@babel/plugin-proposal-class-properties')]
+                        plugins: [
+                            // For ES6 arrow functions
+                            require.resolve('@babel/plugin-proposal-class-properties'),
+                            // For async / await functions
+                            require('@babel/plugin-transform-runtime').default
+                        ]
                     },
                     // Don't grab all .js files from node_modules
                     exclude: /(node_modules|bower_components)/
